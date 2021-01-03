@@ -1,4 +1,8 @@
 <?php
+// declare variables
+$KDA = 0;
+$reps = 0;
+$workout = '';
 // if form is submitted, process the data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $_POST['result'];
@@ -7,10 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $assists = $_POST['assists'];
 }
  
-print_r($_POST);
+// test post results
+// print_r($_POST);
 
 // Randomize a workout
 function random_workout() {
+    // call global variable
+    global $workout;
     // get random number to represent a workout
     $random_number = rand(1,3);
 
@@ -28,7 +35,7 @@ function random_workout() {
         $workout = "Sit-ups";
     }
     
-    echo $workout;
+    return $workout;
 }
 
 // Calculate amount of reps due to KDA
@@ -36,11 +43,55 @@ function random_workout() {
 // KDA equals kills plus assists divide by deaths
 // Round KDA and reps
 // If game lost, add 20 reps
-function reps() {
-    $KDA = (($kills + $assists) / $deaths);
-    echo $KDA;
+function calc_reps() {
+    // get global variables
+    global $KDA, $reps, $result, $kills, $deaths, $assists;
+
+    // calculate KDA, rounded
+    $KDA = round(($kills + $assists) / $deaths);
+
+    // multiply each death by 5 rep, divide by KDA, round it
+    $reps = round(($deaths * 5) / $KDA);
+
+    // check if result is a win or lost
+    // if lost, add 20 to reps
+    if ($result == 'lose') {
+        $reps += 20;
+    }
+
+    // return number of reps
+    return $reps;
 }
 
+// call functions
 random_workout();
-reps();
+calc_reps();
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>KDA Workout Result</title>
+</head>
+<body>
+    <div class="content">
+        <h1>KDA Workout</h1>
+        <h2>
+        <?php 
+            if ($result == 'win') {
+                echo 'You Won!';
+            } else {
+                echo 'You Lost...';
+            }
+        ?>
+        </h2>
+        <p>Your game score: <?php echo $kills . '/' . $deaths . '/' . $assists; ?></p>
+        <p>Your KDA score: <?php echo number_format(($kills + $assists) / $deaths, 2); ?></p>
+        <h2 class="red">Do <?php echo $reps . ' ' . $workout; ?>!</h2>
+        <a href="index.html">Enter New Game</a>
+    </div>
+</body>
+</html>

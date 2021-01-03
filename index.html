@@ -22,15 +22,21 @@
 
             <!-- KDA stats -->
             <p>Game Stats:</p>
-            <label for="kills">Kills:</label><br>
-            <input type="number" id="kills" name="kills" min="0"><br><br>
-            <label for="deaths">Deaths:</label><br>
-            <input type="number" id="deaths" name="deaths" min="0"><br><br>
-            <label for="assists">Assists:</label><br>
-            <input type="number" id="assists" name="assists" min="0"><br><br>
+            <div class="kda">
+                <label for="kills">Kills:</label><br>
+                <input type="number" id="kills" name="kills" min="0"><br><br>
+            </div>
+            <div class="kda">
+                <label for="deaths">Deaths:</label><br>
+                <input type="number" id="deaths" name="deaths" min="0"><br><br>
+            </div>
+            <div class="kda">
+                <label for="assists">Assists:</label><br>
+                <input type="number" id="assists" name="assists" min="0"><br><br>
+            </div>
 
             <!-- submit form -->
-            <input type="submit" value="Get Workout">
+            <input type="submit" id="submit" value="Get Workout">
         </form>
     </div>
 </body>
