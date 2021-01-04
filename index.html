@@ -19,7 +19,7 @@
 
                 <!-- Win or Lose result -->
                 <p>Game Result:</p>
-                <input type="radio" id="win" name="result" value="win">
+                <input type="radio" id="win" name="result" value="win" required>
                 <label for="win">Win</label><br>
                 <input type="radio" id="lose" name="result" value="lose">
                 <label for="lose">Lose</label><br>
@@ -28,15 +28,15 @@
                 <p>Game Stats:</p>
                 <div class="kda">
                     <label for="kills">Kills:</label><br>
-                    <input type="number" id="kills" name="kills" min="0"><br><br>
+                    <input type="number" id="kills" name="kills" min="0" required><br><br>
                 </div>
                 <div class="kda">
                     <label for="deaths">Deaths:</label><br>
-                    <input type="number" id="deaths" name="deaths" min="0"><br><br>
+                    <input type="number" id="deaths" name="deaths" min="0" required><br><br>
                 </div>
                 <div class="kda">
                     <label for="assists">Assists:</label><br>
-                    <input type="number" id="assists" name="assists" min="0"><br><br>
+                    <input type="number" id="assists" name="assists" min="0" required><br><br>
                 </div>
 
                 <!-- submit form -->
