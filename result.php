@@ -73,25 +73,38 @@ calc_reps();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <title>KDA Workout Result</title>
 </head>
 <body>
-    <div class="content">
-        <h1>KDA Workout</h1>
-        <h2>
-        <?php 
-            if ($result == 'win') {
-                echo 'You Won!';
-            } else {
-                echo 'You Lost...';
-            }
-        ?>
-        </h2>
-        <p>Your game score: <?php echo $kills . '/' . $deaths . '/' . $assists; ?></p>
-        <p>Your KDA score: <?php echo number_format(($kills + $assists) / $deaths, 2); ?></p>
-        <h2 class="red">Do <?php echo $reps . ' ' . $workout; ?>!</h2>
-        <a href="index.html">Enter New Game</a>
+    <div class="background-image">
+        <div class="header">
+            <div class="hero-text">
+                <h1>KDA Workout</h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="result">
+                <h2>
+                <?php 
+                    if ($result == 'win') {
+                        echo 'You Won!';
+                    } else {
+                        echo 'You Lost...';
+                    }
+                ?>
+                </h2>
+                <p>Your game score: <?php echo $kills . '/' . $deaths . '/' . $assists; ?></p>
+                <p>Your KDA score: <?php echo number_format(($kills + $assists) / $deaths, 2); ?></p>
+                <h2 class="red">Do <?php echo $reps . ' ' . $workout; ?>!</h2>
+                <a class="new-game" href="index.html">Enter New Game</a>
+            </div>
+        </div>
     </div>
+    <footer>
+        <div class="footer-text">
+            <p><em>Designed and Created by Calvin Wang &copy; 2021</em></p>
+        </div>
+    </footer>
 </body>
 </html>
