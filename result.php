@@ -3,6 +3,7 @@
 $KDA = 0;
 $reps = 0;
 $workout = '';
+$msg = '';
 // if form is submitted, process the data
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $_POST['result'];
@@ -45,7 +46,7 @@ function random_workout() {
 // If game lost, add 20 reps
 function calc_reps() {
     // get global variables
-    global $KDA, $reps, $result, $kills, $deaths, $assists;
+    global $KDA, $reps, $msg, $result, $kills, $deaths, $assists;
 
     // calculate KDA, rounded
     $KDA = round(($kills + $assists) / $deaths);
@@ -60,7 +61,14 @@ function calc_reps() {
     }
 
     // return number of reps
-    return $reps;
+    // if reps is greather than 100, return 100
+    if ($reps > 100) {
+        $reps = 100;
+        $msg = 'Damn noob, get good';
+        return $reps;
+    } else {
+       return $reps; 
+    }
 }
 
 // call functions
@@ -96,6 +104,7 @@ calc_reps();
                 </h2>
                 <p>Your game score: <?php echo $kills . '/' . $deaths . '/' . $assists; ?></p>
                 <p>Your KDA score: <?php echo number_format(($kills + $assists) / $deaths, 2); ?></p>
+                <h3 class="red"><?php echo $msg ?></h3>
                 <h2 class="red">Do <?php echo $reps . ' ' . $workout; ?>!</h2>
                 <a class="new-game" href="index.html">Enter New Game</a>
             </div>
