@@ -19,24 +19,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function random_workout() {
     // call global variable
     global $workout;
+    // Array of workout variations
+    $workout_arr = array("Squats", "Push-ups", "Sit-ups", "Lunges", "seconds of Planks", "Russian Twists", "Crunches", "Dips", "Leg Raises", "Mountain Climbers");
     // get random number to represent a workout
-    $random_number = rand(1,3);
+    $random_number = rand(0,count($workout_arr) - 1);
 
     // test random number
     // echo "workout " . $random_number;
+    // echo $random_number . "<br>";
+    // print_r($workout_arr);
 
     // if a number to equal a certain workout
-    if ($random_number == 1) {
-        $workout = "Squats";
-    }
-    elseif ($random_number == 2) {
-        $workout = "Push-ups";
-    }
-    elseif ($random_number == 3) {
-        $workout = "Sit-ups";
-    }
+    // if ($random_number == 1) {
+    //     $workout = "Squats";
+    // }
+    // elseif ($random_number == 2) {
+    //     $workout = "Push-ups";
+    // }
+    // elseif ($random_number == 3) {
+    //     $workout = "Sit-ups";
+    // }
+    // elseif ($random_number == 4) {
+    //     $workout = "Lunges";
+    // }
+    // elseif ($random_number == 5) {
+    //     $workout = "seconds of Planks";
+    // }
+    // elseif ($random_number == 6) {
+    //     $workout = "Russian Twists";
+    // }
+    // elseif ($random_number == 7) {
+    //     $workout = "Crunches";
+    // }
     
-    return $workout;
+    return $workout = $workout_arr[$random_number];
 }
 
 // Calculate amount of reps due to KDA
