@@ -20,7 +20,7 @@ function random_workout() {
     // call global variable
     global $workout;
     // Array of workout variations
-    $workout_arr = array("Squats", "Push-ups", "Sit-ups", "Lunges", "seconds of Planks", "Russian Twists", "Crunches", "Dips", "Leg Raises", "Mountain Climbers");
+    $workout_arr = array("Squats", "Traditional Push-ups", "Sit-ups", "Lunges", "seconds of Planks", "Russian Twists", "Crunches", "Dips", "Leg Raises", "Mountain Climbers", "Wide Hand Push-ups", "Close Hand Push-ups", "total Bicep Curls (dumbbell)", "total Hammer Curls (dumbbell)", "total Triceps Kick Back (dumbbell)", "Overhead Press (dumbbell)", "(Bent Over Row (dumbbell)", "Russian Twists with Dumbbell", "Dumbbell Goblet Squat");
     // get random number to represent a workout
     $random_number = rand(0,count($workout_arr) - 1);
 
@@ -68,7 +68,12 @@ function calc_reps() {
     $KDA = round(($kills + $assists) / $deaths);
 
     // multiply each death by 5 rep, divide by KDA, round it
-    $reps = round(($deaths * 5) / $KDA);
+    // Cannot divide by 0, check KDA
+    if ($KDA == 0) {
+        $reps = round($deaths * 5);
+    } else {
+        $reps = round(($deaths * 5) / $KDA);
+    }
 
     // check if result is a win or lost
     // if lost, add 20 to reps
