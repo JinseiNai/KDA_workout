@@ -7,7 +7,7 @@ function random_workout() {
     // call global variable
     global $workout;
     // Array of workout variations
-    $workout_arr = array("Squats", "Traditional Push-ups", "Sit-ups", "Lunges", "seconds of Planks", "Russian Twists", "Crunches", "Dips", "Leg Raises", "Mountain Climbers", "Wide Hand Push-ups", "Close Hand Push-ups", "total Bicep Curls (dumbbell)", "total Hammer Curls (dumbbell)", "total Triceps Kick Back (dumbbell)", "Overhead Press (dumbbell)", "(Bent Over Row (dumbbell)", "Russian Twists with Dumbbell", "Dumbbell Goblet Squat", "Dumbbell Lateral Raises");
+    $workout_arr = array("Squats", "Traditional Push-ups", "Sit-ups", "Lunges", "seconds of Planks", "Russian Twists", "Crunches", "Dips", "Leg Raises", "Mountain Climbers", "Wide Hand Push-ups", "Close Hand Push-ups", "total Bicep Curls (dumbbell)", "total Hammer Curls (dumbbell)", "total Triceps Kick Back (dumbbell)", "Overhead Press (dumbbell)", "Bent Over Row (dumbbell)", "Russian Twists with Dumbbell", "Dumbbell Goblet Squat", "Dumbbell Lateral Raises");
     // get random number to represent a workout
     $random_number = rand(0,count($workout_arr) - 1);
     
