@@ -14,34 +14,16 @@
             </div>
         </div>
         <div class="content">
-            <form action="result.php" method="post">
-                <h3>Enter Game Stats</h3>
-
-                <!-- Win or Lose result -->
-                <p>Game Result:</p>
-                <input type="radio" id="win" name="result" value="win" required>
-                <label for="win">Win</label><br>
-                <input type="radio" id="lose" name="result" value="lose">
-                <label for="lose">Lose</label><br>
-
-                <!-- KDA stats -->
-                <p>Game Stats:</p>
-                <div class="kda">
-                    <label for="kills">Kills:</label><br>
-                    <input type="number" id="kills" name="kills" min="0" required><br><br>
-                </div>
-                <div class="kda">
-                    <label for="deaths">Deaths:</label><br>
-                    <input type="number" id="deaths" name="deaths" min="0" required><br><br>
-                </div>
-                <div class="kda">
-                    <label for="assists">Assists:</label><br>
-                    <input type="number" id="assists" name="assists" min="0" required><br><br>
-                </div>
-
-                <!-- submit form -->
-                <input type="submit" id="submit" value="Get Workout">
-            </form>
+            <div class="opac-bg home-box">
+                <h2>Enter KDA Score For Workout</h2>
+                <button class="pop-btn"><a href="kda.html">Enter</a></button>
+            </div>
+            <div class="opac-bg home-box">
+                <form action="random.php" method="post">
+                    <h2>Generate Random Workout</h2>
+                    <input type="submit" value="Generate" class="pop-btn">
+                </form>
+            </div>
         </div>
     </div>
     <footer>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>KDA Workout</title>
+</head>
+<body>
+    <div class="background-image">
+        <div class="header">
+            <div class="hero-text">
+                <h1>KDA Workout</h1>
+            </div>
+        </div>
+        <div class="content">
+            <div class="opac-bg">
+                <form action="result.php" method="post">
+                    <h3>Enter Game Stats</h3>
+
+                    <!-- Win or Lose result -->
+                    <p>Game Result:</p>
+                    <input type="radio" id="win" name="result" value="win" required>
+                    <label for="win">Win</label><br>
+                    <input type="radio" id="lose" name="result" value="lose">
+                    <label for="lose">Lose</label><br>
+
+                    <!-- KDA stats -->
+                    <p>Game Stats:</p>
+                    <div class="kda">
+                        <label for="kills">Kills:</label><br>
+                        <input type="number" id="kills" name="kills" min="0" required><br><br>
+                    </div>
+                    <div class="kda">
+                        <label for="deaths">Deaths:</label><br>
+                        <input type="number" id="deaths" name="deaths" min="0" required><br><br>
+                    </div>
+                    <div class="kda">
+                        <label for="assists">Assists:</label><br>
+                        <input type="number" id="assists" name="assists" min="0" required><br><br>
+                    </div>
+
+                    <!-- submit form -->
+                    <input type="submit" id="submit" value="Get Workout" class="pop-btn">
+                    <br><br>
+                </form>
+                <button><a href="index.html">Home</a></button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-text">
+            <p><em>Designed and Created by Calvin Wang &copy; 2021</em></p>
+        </div>
+    </footer>
+</body>
+</html>

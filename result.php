@@ -20,37 +20,9 @@ function random_workout() {
     // call global variable
     global $workout;
     // Array of workout variations
-    $workout_arr = array("Squats", "Traditional Push-ups", "Sit-ups", "Lunges", "seconds of Planks", "Russian Twists", "Crunches", "Dips", "Leg Raises", "Mountain Climbers", "Wide Hand Push-ups", "Close Hand Push-ups", "total Bicep Curls (dumbbell)", "total Hammer Curls (dumbbell)", "total Triceps Kick Back (dumbbell)", "Overhead Press (dumbbell)", "(Bent Over Row (dumbbell)", "Russian Twists with Dumbbell", "Dumbbell Goblet Squat");
+    $workout_arr = array("Squats", "Traditional Push-ups", "Sit-ups", "Lunges", "seconds of Planks", "Russian Twists", "Crunches", "Dips", "Leg Raises", "Mountain Climbers", "Wide Hand Push-ups", "Close Hand Push-ups", "total Bicep Curls (dumbbell)", "total Hammer Curls (dumbbell)", "total Triceps Kick Back (dumbbell)", "Overhead Press (dumbbell)", "(Bent Over Row (dumbbell)", "Russian Twists with Dumbbell", "Dumbbell Goblet Squat", "Dumbbell Lateral Raises");
     // get random number to represent a workout
     $random_number = rand(0,count($workout_arr) - 1);
-
-    // test random number
-    // echo "workout " . $random_number;
-    // echo $random_number . "<br>";
-    // print_r($workout_arr);
-
-    // if a number to equal a certain workout
-    // if ($random_number == 1) {
-    //     $workout = "Squats";
-    // }
-    // elseif ($random_number == 2) {
-    //     $workout = "Push-ups";
-    // }
-    // elseif ($random_number == 3) {
-    //     $workout = "Sit-ups";
-    // }
-    // elseif ($random_number == 4) {
-    //     $workout = "Lunges";
-    // }
-    // elseif ($random_number == 5) {
-    //     $workout = "seconds of Planks";
-    // }
-    // elseif ($random_number == 6) {
-    //     $workout = "Russian Twists";
-    // }
-    // elseif ($random_number == 7) {
-    //     $workout = "Crunches";
-    // }
     
     return $workout = $workout_arr[$random_number];
 }
@@ -113,21 +85,25 @@ calc_reps();
             </div>
         </div>
         <div class="content">
-            <div class="result">
-                <h2>
-                <?php 
-                    if ($result == 'win') {
-                        echo 'You Won!';
-                    } else {
-                        echo 'You Lost...';
-                    }
-                ?>
-                </h2>
-                <p>Your game score: <?php echo $kills . '/' . $deaths . '/' . $assists; ?></p>
-                <p>Your KDA score: <?php echo number_format(($kills + $assists) / $deaths, 2); ?></p>
-                <h3 class="red"><?php echo $msg ?></h3>
-                <h2 class="red">Do <?php echo $reps . ' ' . $workout; ?>!</h2>
-                <a class="new-game" href="index.html">Enter New Game</a>
+            <div class="opac-bg">
+                <div class="result">
+                    <h2>
+                    <?php 
+                        if ($result == 'win') {
+                            echo 'You Won!';
+                        } else {
+                            echo 'You Lost...';
+                        }
+                    ?>
+                    </h2>
+                    <p>Your game score: <?php echo $kills . '/' . $deaths . '/' . $assists; ?></p>
+                    <p>Your KDA score: <?php echo number_format(($kills + $assists) / $deaths, 2); ?></p>
+                    <h3 class="red"><?php echo $msg ?></h3>
+                    <h2 class="red">Do <?php echo $reps . ' ' . $workout; ?>!</h2>
+                    <button class="pop-btn"><a href="kda.html">Enter New Game</a></button>
+                </div>
+                <br><br>
+                <button><a href="index.html">Home</a></button>
             </div>
         </div>
     </div>

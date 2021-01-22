@@ -34,13 +34,23 @@ body {
 .content {
     width: 100%;
     min-height: calc(100vh - 150px);
+    position: relative;
+    text-align: center;
 }
 
-form, .result {
-    background-color: rgba(255, 255, 255, 0.7);
+.opac-bg {
+    background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
     padding-top: 1em;
     padding-bottom: 2em;
+    border: 1px solid black;
+}
+
+.home-box {
+    display: inline-block;
+    padding: 3em;
+    margin: 3em;
+    width: 80%;
 }
 
 /* Remove Number Increment */
@@ -70,15 +80,15 @@ input[type=number] {
     color: red;
 }
 
-.new-game {
-    padding: 5px;
-    border-radius: 5px;
-    background-color: rgb(253, 191, 19);
+.pop-btn {
+    background-color: rgb(250, 238, 78);
+    color: black;
+    padding: .5rem;
 }
 
-.new-game:hover {
-    background-color: rgb(231, 172, 9);
-    color: white;
+.pop-btn:hover {
+    background-color: rgb(245, 225, 43);
+    cursor: pointer;
 }
 
 a:link {
@@ -87,6 +97,10 @@ a:link {
 
 a:visited {
     text-decoration: none;
+    color: rgb(40, 103, 240);
+}
+
+input[type=submit] {
     color: rgb(40, 103, 240);
 }
 
@@ -112,8 +126,12 @@ footer {
     }
     
     .content {
-        width: 50%;
+        width: 80%;
         margin: auto;
+    }
+
+    .home-box {
+        width: 60%;
     }
 
     .kda {
@@ -123,5 +141,11 @@ footer {
     }
 }
 @media (min-width: 1024px) {
-    
+    .content {
+        width: 100%;
+    }
+
+    .home-box {
+        width: 30%;
+    }
 }
